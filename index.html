@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Presupuesto Personal</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-container-title">
+                <h1 class="header-title">Presupuesto Personal</h1>
+                <span class="header-author">By: Pedro Eusebio</span>
+            </div>
+            <div class="header-container-img">
+                <img src="/img/budget.png" alt="budget-img">
+            </div>
+            <div class="header-container-date">
+                <!-- Aqui se va inyectar una fecha de forma dinamica desde javascript -->
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <a href="#">INCOMES</a>
+            <a href="#">EXPENSES</a>
+            <a href="#">PAYMENTS</a>
+            <a href="#">BALANCES</a>
+        </nav>
+    </header>
+    <main>
+        <section class="overview-container">
+            <div class="overview-item income">
+                <strong>INCOMES</strong>
+                <span>RD$ 0.00</span>
+            </div>
+            <div class="overview-item expenses">
+                <strong>EXPENSES</strong>
+                <span>RD$ 0.00</span>
+            </div>
+            <div class="overview-item payments">
+                <strong>PAYMENTS</strong>
+                <span>RD$ 0.00</span>
+            </div>
+            <div class="overview-item balance">
+                <strong>BALANCE</strong>
+                <span>RD$ 0.00</span>
+            </div>
+        </section>
+        <Section class="transactions-container">
+            <div class="transactions-div incomes">
+                <h2>Monthly Incomes</h2>
+                <button> + Add</button>
+                <ul>
+                    <li class="empty">No hay Datos Registrados</li>
+                </ul>
+            </div>
+            <div class="transactions-div expenses">
+                <h2>Gastos Necesarios</h2>
+                <button> + Add</button>
+                <ul>
+                    <li class="empty">No hay Datos Registrados</li>
+                </ul>
+            </div>
+            <div class="transactions-div payments">
+                <h2>Pago del Mes</h2>
+                <button> + Add</button>
+                <ul>
+                    <li class="empty">No hay Datos Registrados</li>
+                </ul>
+            </div>
+            <div class="transactions-div balances">
+                <h2>Estado de Cuentas</h2>
+                <button> + Add</button>
+                <ul>
+                    <li class="empty">No hay Datos Registrados</li>
+                </ul>
+            </div>
+        </Section>
+    </main>
+    <footer></footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
