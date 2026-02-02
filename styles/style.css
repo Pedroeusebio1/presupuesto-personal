@@ -162,35 +162,54 @@ body{
     place-items: center;
 }
 
+.transactions-div strong{
+    font-weight: 900;
+    color: var(--color-header-bg);
+    padding-left: 50px;
+}
+
+
 .transactions-div:hover,
 .transactions-div:focus-within {
     box-shadow: 0 0 10px rgba(22, 41, 63, 0.65);
     transition: box-shadow 0.2s ease;
 }
 
-.transactions-div{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 1fr;
-    text-align: center;
+.transactions-div li:hover {
+    opacity: .5;
+    box-shadow: 0 0 10px rgba(22, 41, 63, 0.65);
+    transition: box-shadow 0.2s ease;
+}
+
+.transaction-header{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: right;
+    margin: 10px;
+    border-bottom: 2px solid var(--color-font);
+    gap: 50px;
+}
+
+.transaction-header button{
+    align-self: center;
+    height: 50px;
 }
 
 .transactions-div ul{
-    grid-column: 1/-1;
-    height: 100%;
+    flex: 1;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.transactions-div li{
-
-}
 
 button{
-    font-weight: 500;
-    font-size: .875rem;
-    padding: .5rem 1rem .5rem 1rem;
     border-radius: .5rem;
     background-color: var(--color-header-bg);
     transition: all 0.3s ease;
     cursor: pointer;
     color: var(--color-font);
+    font-weight: bolder;
 }
