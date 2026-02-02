@@ -204,6 +204,11 @@ body{
     list-style: none;
 }
 
+.transaction-item_container span{
+    margin-left: 20px;
+    font-weight: 700;
+}
+
 
 button{
     border-radius: .5rem;
