@@ -1,4 +1,4 @@
-import AddingTransaction from "./adding-transaction.js";
+import AddingTransaction from "./overview-recap.js";
 
 /*Eventos */
 export default function typePayment(e) {
@@ -8,14 +8,16 @@ export default function typePayment(e) {
                 AddingTransaction('income');
                 break;
             case 'expenses':
-                AddingTransaction('expenses');
+                AddingTransaction('expense');
                 break;
             case 'payments':
-                AddingTransaction('payments');
+                AddingTransaction('payment');
                 break;
             case 'balances':
-                AddingTransaction('balances'); 
+                AddingTransaction('balance'); 
                 break;
         }
     }
+
+    
 }
