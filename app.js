@@ -1,6 +1,6 @@
 /*Selectores */
 
-const btnAgregar = document.querySelectorAll('button')
+const btnAgregar = document.querySelectorAll('.btnAgregar')
 
 /*Obj Overview Amount */
 const overviewAmount = {
@@ -73,7 +73,6 @@ function guardarInfo(objTrans) {
         localStorage.setItem('transaction',JSON.stringify(transLocalStorage))
         overview()
     }
-     
 }
 
 function overview() {
@@ -108,7 +107,7 @@ function overview() {
     aumentarContador('incomes',overviewAmount.incomes)
     aumentarContador('expenses',overviewAmount.expenses)
     aumentarContador('payments',overviewAmount.payments)
-    aumentarContador('balances',overviewAmount.balances)
+    aumentarContador('balances',overviewAmount.balance)
     transRender(transactionArray)
 
 }
@@ -126,41 +125,24 @@ function aumentarContador(type , amount) {
 }
 
 function transRender(transactions) {
+    const existeLi = document.querySelector('.transaction-item_container')
     
-    transactions.forEach( trans =>{
+    if (!existeLi) {
+        transactions.forEach( trans =>{
+        const ul = document.querySelector(`.ul-${trans.type}`)
+        const li = document.createElement('LI')
+        li.classList.add('transaction-item_container')
 
-        switch (trans.type) {
-            case 'incomes':
-                const ul = document.querySelector(`ul-${trans.type}`)
-                const li = document.createElement('LI')
-                const spanDate = document.createElement('SPAN')
-                const spanDesc = document.createElement('SPAN')
-                const strong = document.createElement('STRONG')
+        li.innerHTML = `
+        <div>
+            <span class="transaction-item">${trans.date}</span>
+            <span class="transaction-item">${trans.description}</span>
+            <strong class="transaction-item">${formatearNumero(trans.amount)}</strong>
+        </div>
+        `
+        ul.appendChild(li)
+    })}
+};
 
-                spanDate.textContent = trans.date
-                spanDesc.textContent = trans.description
-                strong.textContent = trans.amount
-
-                li.append(spanDate, spanDesc, strong)
-
-
-                
-                break;
-        
-            case 'expenses':
-                
-                break;
-        
-            case 'payments':
-                
-                break;
-        
-            case 'balances':
-                
-                break;
-        
-            default:
-                break;
-        }
-    })
+function limpiarHTML(ul) {
 }
