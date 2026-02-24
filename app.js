@@ -76,6 +76,11 @@ function guardarInfo(objTrans) {
 }
 
 function overview() {
+    const uls = document.querySelectorAll('ul')
+    uls.forEach( ul =>{
+        ul.innerHTML = `<li class="empty"> No hay Datos Registrados</li>`
+        })
+
     let transactionArray = JSON.parse(localStorage.getItem('transaction')) || []
 
     overviewAmount.incomes = transactionArray
@@ -125,24 +130,45 @@ function aumentarContador(type , amount) {
 }
 
 function transRender(transactions) {
-    const existeLi = document.querySelector('.transaction-item_container')
-    
-    if (!existeLi) {
-        transactions.forEach( trans =>{
-        const ul = document.querySelector(`.ul-${trans.type}`)
-        const li = document.createElement('LI')
-        li.classList.add('transaction-item_container')
 
-        li.innerHTML = `
-        <div>
-            <span class="transaction-item">${trans.date}</span>
-            <span class="transaction-item">${trans.description}</span>
-            <strong class="transaction-item">${formatearNumero(trans.amount)}</strong>
-        </div>
-        `
-        ul.appendChild(li)
-    })}
-};
+    transactions.forEach( trans =>{
 
-function limpiarHTML(ul) {
+            switch (trans.type) {
+            case "incomes":
+                const ul = document.querySelector(".ul-incomes")
+                generarHTML(trans, ul)
+                break;
+
+            case "expenses":
+                
+                break;
+
+            case "payments":
+                
+                break;
+
+            case "balances":
+                
+                break;
+        }
+    })
 }
+
+
+function generarHTML(trans, ul) {
+
+    const li = document.createElement('LI')
+    li.classList.add('transaction-item_container')
+
+    li.innerHTML = `
+    <div class="transaction-item_content">
+        <span class="transaction-item">${trans.date}</span>
+        <span class="transaction-item">${trans.description}</span>
+        <strong class="transaction-item strong">${formatearNumero(trans.amount)}</strong>
+        <button>X</button>
+    </div>
+    `
+
+    ul.appendChild(li)
+}
+

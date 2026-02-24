@@ -165,7 +165,6 @@ body{
 .transactions-div strong{
     font-weight: 900;
     color: var(--color-header-bg);
-    padding-left: 50px;
 }
 
 
@@ -205,7 +204,6 @@ body{
 }
 
 .transaction-item_container span{
-    margin-left: 20px;
     font-weight: 700;
 }
 
@@ -217,4 +215,19 @@ button{
     cursor: pointer;
     color: var(--color-font);
     font-weight: bolder;
+}
+
+.transaction-item_content{
+    width: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.strong{
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
